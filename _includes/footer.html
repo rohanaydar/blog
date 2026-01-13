@@ -1,0 +1,56 @@
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3 class="footer-logo">
+                <span class="logo-icon">𐃉</span> {{ site.title }}
+            </h3>
+            <p class="footer-mission">
+                {{ site.description }}
+            </p>
+        </div>
+        
+        <div class="footer-links">
+            <div class="link-col">
+                <h4>Keşfet</h4>
+                <ul>
+                    <li><a href="{{ '/' | relative_url }}">Ana Sayfa</a></li>
+                    <li><a href="{{ '/yazilar.html' | relative_url }}">Tüm Yazılar</a></li>
+                    <li><a href="{{ '/kategoriler.html' | relative_url }}">Kategoriler</a></li>
+                    <li><a href="#arsiv">Arşiv</a></li>
+                </ul>
+            </div>
+            
+            <div class="link-col">
+                <h4>Bağlantılar</h4>
+                <ul>
+                    <li><a href="#hakkimda">Hakkımda</a></li>
+                    <li><a href="#iletisim">İletişim</a></li>
+                    <li><a href="#gizlilik">Gizlilik Politikası</a></li>
+                    <li><a href="#sss">S.S.S.</a></li>
+                </ul>
+            </div>
+            
+            <div class="link-col">
+                <h4>Sosyal</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a>
+                </div>
+                <p class="newsletter-text">Yeni yazılardan haberdar olun.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-posta adresiniz" required>
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <p class="copyright">&copy; 2026 {{ site.title }}. Tüm hakları saklıdır.</p>
+            <p class="footer-quote-small">"Hikmet, mü'minin yitik malıdır. Onu nerede bulursa alır."</p>
+        </div>
+    </div>
+</footer>
