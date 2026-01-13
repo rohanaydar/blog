@@ -3,62 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişisel Blogum</title>
+    <title>Modern Düşünce | Geleceğe Dair</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Modern Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- NAVİGASYON -->
+    <!-- Geometrik Arka Plan -->
+    <div class="background-pattern"></div>
+    <div class="motif motif-1"></div>
+    <div class="motif motif-2"></div>
+
+    <!-- Modern Navbar -->
     <nav class="navbar">
-        <ul class="nav-menu">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="#kategoriler">Kategoriler</a></li>
-            <li><a href="#hakkimda">Hakkımda</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-        </ul>
-    </nav>
-
-    <!-- ANA İÇERİK -->
-    <div class="container">
-        <main>
-            <h1>Son Yazılar</h1>
+        <div class="nav-container">
+            <div class="logo">
+                ModernDüşünce
+            </div>
             
-            <!-- BLOG YAZISI KARTI (ÖRNEK) -->
-            <article class="blog-card">
-                <h2><a href="blog/seyahat-ilk-yazi.html">İlk Seyahat Deneyimim</a></h2>
-                <time datetime="2024-01-20">20 Ocak 2024</time>
-                <p>Bu seyahatte öğrendiklerim ve tecrübelerim...</p>
-                <span class="category">Seyahat</span>
-            </article>
-            
-            <!-- DİĞER YAZILAR BURAYA -->
-        </main>
-
-        <!-- YAN MENÜ -->
-        <aside class="sidebar">
-            <h3>Kategoriler</h3>
-            <ul class="category-list">
-                <li><a href="#tefsir">Kuran Tefsiri</a></li>
-                <li><a href="#tarih">Tarih & Medeniyet</a></li>
-                <li><a href="#kitap">Kitap Yorumları</a></li>
-                <li><a href="#bilim">Bilimsel Yazılar</a></li>
-                <li><a href="#kisisel">Kişisel Deneyimler</a></li>
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                <li><a href="#"><i class="fas fa-book-open"></i> Yazılar</a></li>
+                <li><a href="#"><i class="fas fa-mountain"></i> Kürdistan</a></li>
+                <li><a href="#"><i class="fas fa-mosque"></i> İslam</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Hakkımda</a></li>
             </ul>
             
-            <h3>Öne Çıkan</h3>
-            <blockquote class="quote">
-                "Adalet mülkün temelidir."
-                <footer>- Özlü Söz</footer>
-            </blockquote>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">
+            Gelecek Burada Başlıyor
+            <span style="display: block; font-size: 2rem; margin-top: 1rem; color: var(--accent);">
+                Geleneksel Kökler, Modern Dallar
+            </span>
+        </h1>
+        <p class="hero-subtitle">
+            İslam'ın evrensel değerleri, Kürdistan'ın kadim bilgeliği ve modern dünyanın 
+            teknolojik imkanlarıyla şekillenen bir düşünce platformu
+        </p>
+        
+        <div class="hero-cta">
+            <a href="#" class="cta-button">Yazıları Keşfet</a>
+            <a href="#" class="cta-button-outline">Hakkımda</a>
+        </div>
+    </section>
+
+    <!-- Ana İçerik -->
+    <div class="main-container">
+        <main>
+            <div class="section-header">
+                <h2><i class="fas fa-stars"></i> Öne Çıkan Yazılar</h2>
+                <p>Güncel analizler ve derin düşünceler</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Blog Kartı 1 -->
+                <article class="blog-card">
+                    <span class="card-category">Kuran Tefsiri</span>
+                    <h3 class="card-title">Modern Çağda Adalet: Nisa 135'in Yeni Yorumu</h3>
+                    <p class="card-excerpt">
+        Yapay zeka çağında İslami adalet kavramını nasıl yeniden düşünmeliyiz? Geleneksel tefsirlerin ötesine geçen bir yaklaşım...
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar"></i> 2 Gün Önce</span>
+                        <span><i class="far fa-clock"></i> 8 dk okuma</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="blog/tefsir-modern-adalet.html" class="read-more">
+                            Devamını Oku <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Kartı 2 -->
+                <article class="blog-card">
+                    <span class="card-category">Teknoloji & İslam</span>
+                    <h3 class="card-title">Blockchain ve Zekat: Dijital Çağda Sadaka Kültürü</h3>
+                    <p class="card-excerpt">
+                        Kripto para ve blockchain teknolojisi İslami finans ve zekat sistemini nasıl dönüştürebilir?
+                    </p>
+                    <div class="card-meta">
+                        <span><i class="far fa-calendar"></i> 1 Hafta Önce</span>
+                        <span><i class="fas fa-brain"></i> İleri Seviye</span>
+                    </div>
+                    <div class="card-footer">
+                        <a href="blog/blockchain-zekat.html" class="read-more">
+                            Devamını Oku <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Diğer kartlar... -->
+            </div>
+        </main>
+
+        <!-- Modern Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3><i class="fas fa-filter"></i> Kategoriler</h3>
+                <div class="category-cloud">
+                    <span class="category-tag">Kuran Tefsiri</span>
+                    <span class="category-tag">Modern İslam</span>
+                    <span class="category-tag">Kürdistan Tarihi</span>
+                    <span class="category-tag">Teknoloji & Din</span>
+                    <span class="category-tag">Sosyoloji</span>
+                    <span class="category-tag">Kişisel Gelişim</span>
+                    <span class="category-tag">Bilim-Felsefe</span>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3><i class="fas fa-quote-right"></i> Günün Sözü</h3>
+                <blockquote class="wisdom-quote">
+                    "İlim, Çin'de de olsa alınız; çünkü ilim mü'minin kayıp malıdır."
+                    <footer>- Hz. Muhammed (s.a.v)</footer>
+                </blockquote>
+            </div>
+
+            <div class="sidebar-card">
+                <h3><i class="fas fa-trending-up"></i> Popüler Yazılar</h3>
+                <ul class="popular-posts">
+                    <li><a href="#">Yapay Zeka ve Ahlak Sorumluluğu</a></li>
+                    <li><a href="#">Kürt Dili: Geçmiş ve Gelecek</a></li>
+                    <li><a href="#">Dijital Çağda İbadet</a></li>
+                </ul>
+            </div>
         </aside>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2024 Kişisel Blogum | Allah rızası için adalet ve merhamet</p>
-        <p>İletişim: [e-posta veya sosyal medya]</p>
+    <!-- Modern Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-quote">
+                "Hikmet, mü'minin yitik malıdır. Onu nerede bulursa alır."
+                <div style="margin-top: 1rem; font-size: 1rem; color: var(--text-secondary);">
+                    — Geleneksel ile modernin buluşma noktası
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Bağlantılar</h4>
+                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+            
+            <div class="footer-newsletter">
+                <h4>Güncellemeleri Kaçırma</h4>
+                <p>Yeni yazılardan haberdar ol.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="E-posta adresiniz">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2024 Modern Düşünce | Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a></p>
+            <p class="footer-motto">
+                <i class="fas fa-heart" style="color: var(--accent2);"></i>
+                İlim, İman, İrfan yolunda...
+            </p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Basit JavaScript -->
+    <script>
+        // Tema değiştirme
+        document.querySelector('.theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('light-mode')) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        });
+
+        // Kart hover efekti
+        document.querySelectorAll('.blog-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
