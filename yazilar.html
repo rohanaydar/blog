@@ -1,0 +1,171 @@
+---
+layout: default
+title: Tüm Yazılar
+description: Tüm blog yazılarını kategori, tarih ve okuma süresine göre filtreleyin.
+---
+
+<section class="page-hero">
+    <div class="page-hero-container">
+        <h1 class="page-hero-title">Tüm Yazılar</h1>
+        <p class="page-hero-subtitle">Köklü düşünceler, modern yaklaşımlar.</p>
+    </div>
+</section>
+
+<main class="all-posts-main">
+    <div class="all-posts-container">
+        <!-- Tüm yazıları Jekyll ile listeleyelim -->
+        <div class="posts-grid">
+            {% for post in site.posts %}
+            <article class="all-post-card">
+                <div class="all-post-meta">
+                    {% for category in post.categories %}
+                    <span class="all-post-category" style="background-color: rgba(46, 79, 47, 0.15); color: #4B8763;">
+                        {{ category }}
+                    </span>
+                    {% endfor %}
+                    <time class="all-post-date">{{ post.date | date: "%d %B %Y" }}</time>
+                </div>
+                <h3 class="all-post-title">
+                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                <p class="all-post-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                <div class="all-post-footer">
+                    <a href="{{ post.url | relative_url }}" class="all-post-read-more">
+                        Devamını Oku <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <span class="all-post-read-time">
+                        <i class="far fa-clock"></i> {{ post.readTime }} dk
+                    </span>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+
+<style>
+/* Yazılar sayfası stilleri */
+.all-posts-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.all-post-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.8rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.all-post-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.all-post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+    border-color: var(--color-accent);
+}
+
+.all-post-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.all-post-category {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    display: inline-block;
+}
+
+.all-post-date {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-left: auto;
+}
+
+.all-post-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.all-post-title a:hover {
+    color: var(--color-accent);
+}
+
+.all-post-excerpt {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.all-post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.all-post-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    font-size: 0.95rem;
+}
+
+.all-post-read-more:hover {
+    gap: 0.8rem;
+    color: var(--color-accent2);
+}
+
+.all-post-read-time {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .all-posts-main {
+        padding: 0 1.5rem 3rem;
+    }
+    
+    .all-post-title {
+        font-size: 1.4rem;
+    }
+}
+</style>
