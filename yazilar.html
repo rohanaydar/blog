@@ -2,6 +2,7 @@
 layout: default
 title: Tüm Yazılar
 description: Tüm blog yazılarını kategori, tarih ve okuma süresine göre filtreleyin.
+permalink: /yazilar/
 ---
 
 <section class="page-hero">
@@ -13,7 +14,6 @@ description: Tüm blog yazılarını kategori, tarih ve okuma süresine göre fi
 
 <main class="all-posts-main">
     <div class="all-posts-container">
-        <!-- Tüm yazıları Jekyll ile listeleyelim -->
         <div class="posts-grid">
             {% for post in site.posts %}
             <article class="all-post-card">
@@ -34,7 +34,14 @@ description: Tüm blog yazılarını kategori, tarih ve okuma süresine göre fi
                         Devamını Oku <i class="fas fa-arrow-right"></i>
                     </a>
                     <span class="all-post-read-time">
-                        <i class="far fa-clock"></i> {{ post.readTime }} dk
+                        <i class="far fa-clock"></i> 
+                        <!-- Okuma süresi için Liquid filtresi -->
+                        {% assign words = post.content | number_of_words %}
+                        {% if words < 360 %}
+                            1 dk
+                        {% else %}
+                            {{ words | divided_by: 180 }} dk
+                        {% endif %}
                     </span>
                 </div>
             </article>
