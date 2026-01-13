@@ -6,13 +6,29 @@
 }
 
 :root {
-    /* SİZİN RENK PALETİNİZ - Koyu Tema (Varsayılan) */
-    --color-primary: #2E4F2F;         /* Gece Yeşili */
-    --color-secondary: #7D2F2F;       /* Koyu Turuncu-Kırmızı */
-    --color-accent: #C69F6D;          /* Sofistike Altın */
-    --color-accent2: #4B8763;         /* Açık Zümrüt */
-    --color-dark: #1F2E3E;            /* Gece Mavisi */
+    /* SİZİN RENK PALETİNİZ - Aydınlık Tema (Varsayılan) */
+    --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --bg-color: #ffffff;
     
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-heading: #222222;
+    
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --border: rgba(0, 0, 0, 0.08);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --header-bg: rgba(255, 255, 255, 0.92);
+    
+    /* Renkler aynı kalacak */
+    --color-primary: #2E4F2F;
+    --color-secondary: #7D2F2F;
+    --color-accent: #C69F6D;
+    --color-accent2: #4B8763;
+    --color-dark: #1F2E3E;
+}
+
+body.dark-theme {
+    /* Koyu Tema Değişkenleri */
     --bg-gradient: linear-gradient(135deg, #121E1A 0%, #2E4F2F 100%);
     --bg-color: #0A1414;
     
@@ -20,13 +36,10 @@
     --text-secondary: #B0B0B0;
     --text-heading: #F2F2F2;
     
-    /* Modern Koddan Alınan Değişkenler */
     --card-bg: rgba(255, 255, 255, 0.03);
     --border: rgba(255, 255, 255, 0.08);
     --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     --header-bg: rgba(18, 30, 26, 0.85);
-    
-    --transition: all 0.3s ease;
 }
 
 body.light-theme {
