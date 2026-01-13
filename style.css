@@ -27,6 +27,19 @@
     --color-dark: #1F2E3E;
 }
 
+body.light-theme {
+    --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --bg-color: #ffffff;
+    
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --text-heading: #222222;
+    
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --border: rgba(0, 0, 0, 0.08);
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --header-bg: rgba(255, 255, 255, 0.92);
+}
 body.dark-theme {
     /* Koyu Tema Değişkenleri */
     --bg-gradient: linear-gradient(135deg, #121E1A 0%, #2E4F2F 100%);
@@ -42,19 +55,6 @@ body.dark-theme {
     --header-bg: rgba(18, 30, 26, 0.85);
 }
 
-body.light-theme {
-    --bg-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    --bg-color: #ffffff;
-    
-    --text-primary: #333333;
-    --text-secondary: #666666;
-    --text-heading: #222222;
-    
-    --card-bg: rgba(255, 255, 255, 0.8);
-    --border: rgba(0, 0, 0, 0.08);
-    --shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-    --header-bg: rgba(255, 255, 255, 0.92);
-}
 
 html {
     scroll-behavior: smooth;
