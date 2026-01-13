@@ -1,0 +1,78 @@
+---
+layout: default
+---
+
+<article class="single-post">
+    <div class="post-container">
+        <header class="post-header">
+            <div class="post-meta">
+                {% for category in page.categories %}
+                <span class="post-category">{{ category }}</span>
+                {% endfor %}
+                <time class="post-date">{{ page.date | date: "%d %B %Y" }}</time>
+            </div>
+            
+            <h1 class="post-title">{{ page.title }}</h1>
+            
+            <div class="post-info">
+                <span class="read-time"><i class="far fa-clock"></i> {{ page.readTime }} dk okuma</span>
+                {% if page.tags %}
+                <div class="post-tags">
+                    {% for tag in page.tags %}
+                    <span class="tag">#{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </header>
+        
+        <div class="post-content">
+            {{ content }}
+        </div>
+        
+        <footer class="post-footer">
+            <div class="post-navigation">
+                <a href="{{ '/' | relative_url }}" class="back-home">
+                    <i class="fas fa-arrow-left"></i> Ana Sayfaya Dön
+                </a>
+                <a href="{{ '/yazilar.html' | relative_url }}" class="all-posts">
+                    Tüm Yazılar <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="post-share">
+                <p>Yazıyı paylaş:</p>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn twitter" aria-label="Twitter'da paylaş">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="share-btn linkedin" aria-label="LinkedIn'de paylaş">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="share-btn link" aria-label="Linki kopyala" id="copyLink">
+                        <i class="fas fa-link"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</article>
+
+<script>
+    // Link kopyalama
+    document.getElementById('copyLink')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        const url = window.location.href;
+        
+        navigator.clipboard.writeText(url).then(() => {
+            const originalHTML = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-check"></i>';
+            this.style.backgroundColor = '#4B8763';
+            
+            setTimeout(() => {
+                this.innerHTML = originalHTML;
+                this.style.backgroundColor = '';
+            }, 2000);
+        });
+    });
+</script>
