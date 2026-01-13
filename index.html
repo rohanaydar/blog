@@ -217,19 +217,25 @@
 
     <!-- JavaScript -->
     <script>
-        // Tema Değiştirme
+        // Tema Değiştirme - Varsayılan: LIGHT
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = themeToggle.querySelector('i');
         
+        // Sayfa yüklendiğinde varsayılan light tema için güneş ikonu göster
+        themeIcon.className = 'fas fa-sun';
+        themeIcon.style.color = '#C69F6D';
+        
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-theme');
+            document.body.classList.toggle('dark-theme');
             
-            if (document.body.classList.contains('light-theme')) {
+            if (document.body.classList.contains('dark-theme')) {
+                // Koyu tema aktifse ay ikonu
+                themeIcon.className = 'fas fa-moon';
+                themeIcon.style.color = '#1F2E3E';
+            } else {
+                // Light tema aktifse güneş ikonu
                 themeIcon.className = 'fas fa-sun';
                 themeIcon.style.color = '#C69F6D';
-            } else {
-                themeIcon.className = 'fas fa-moon';
-                themeIcon.style.color = '';
             }
         });
 
