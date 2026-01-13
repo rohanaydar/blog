@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Blogum</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- NAVİGASYON -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="#kategoriler">Kategoriler</a></li>
+            <li><a href="#hakkimda">Hakkımda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+        </ul>
+    </nav>
+
+    <!-- ANA İÇERİK -->
+    <div class="container">
+        <main>
+            <h1>Son Yazılar</h1>
+            
+            <!-- BLOG YAZISI KARTI (ÖRNEK) -->
+            <article class="blog-card">
+                <h2><a href="blog/seyahat-ilk-yazi.html">İlk Seyahat Deneyimim</a></h2>
+                <time datetime="2024-01-20">20 Ocak 2024</time>
+                <p>Bu seyahatte öğrendiklerim ve tecrübelerim...</p>
+                <span class="category">Seyahat</span>
+            </article>
+            
+            <!-- DİĞER YAZILAR BURAYA -->
+        </main>
+
+        <!-- YAN MENÜ -->
+        <aside class="sidebar">
+            <h3>Kategoriler</h3>
+            <ul class="category-list">
+                <li><a href="#tefsir">Kuran Tefsiri</a></li>
+                <li><a href="#tarih">Tarih & Medeniyet</a></li>
+                <li><a href="#kitap">Kitap Yorumları</a></li>
+                <li><a href="#bilim">Bilimsel Yazılar</a></li>
+                <li><a href="#kisisel">Kişisel Deneyimler</a></li>
+            </ul>
+            
+            <h3>Öne Çıkan</h3>
+            <blockquote class="quote">
+                "Adalet mülkün temelidir."
+                <footer>- Özlü Söz</footer>
+            </blockquote>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2024 Kişisel Blogum | Allah rızası için adalet ve merhamet</p>
+        <p>İletişim: [e-posta veya sosyal medya]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
