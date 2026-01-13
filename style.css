@@ -1,0 +1,100 @@
+/* TEMEL AYARLAR */
+:root {
+    --zeytin: #556B2F;
+    --bordo: #800000;
+    --kum: #D9CBB1;
+    --altin: #CBA135;
+    --siyah: #000000;
+    --koyu-gri: #2E2E2E;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--koyu-gri);
+    background-color: var(--kum);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* BAŞLIKLAR */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--bordo);
+    border-bottom: 2px solid var(--altin);
+    padding-bottom: 5px;
+}
+
+/* NAVİGASYON */
+.navbar {
+    background-color: var(--zeytin);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* İÇERİK ALANI */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+}
+
+/* YAZI KARTLARI */
+.blog-card {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--altin);
+}
+
+/* YAN MENÜ */
+.sidebar {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--zeytin);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
