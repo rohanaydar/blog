@@ -1,0 +1,30 @@
+title: "Ömer Seyfettin Aydar | Kişisel Blog"
+description: "Geleneksel kökler ile modern dalları birleştiren bir düşünce serisi"
+baseurl: "/blog"
+url: "https://rohanaydar.github.io"
+
+# Jekyll ayarları
+markdown: kramdown
+permalink: /blog/:title
+collections:
+  posts:
+    output: true
+
+# Tema ayarları
+theme: null
+
+# Eklentiler
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude (dahil etme)
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Site verileri
+author:
+  name: "Ömer Seyfettin Aydar"
