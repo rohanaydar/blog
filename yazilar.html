@@ -93,8 +93,8 @@ description: Tüm blog yazılarını kategori, tarih ve okuma süresine göre fi
         {% for post in site.posts %}
         {
             id: {{ forloop.index }},
-            title: "{{ post.title | escape }}",
-            excerpt: "{{ post.excerpt | strip_html | truncate: 150 | escape }}",
+            title: '{{ post.title | escape }}',
+            excerpt: '{{ post.excerpt | strip_html | truncate: 150 | escape }}',
             categories: {{ post.categories | jsonify }},
             date: "{{ post.date | date: '%Y-%m-%d' }}",
             readTime: "{{ post.readTime }}",
