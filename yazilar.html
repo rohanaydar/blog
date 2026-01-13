@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tüm Yazılar | Modern Düşünce</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="#">
+</head>
+<body>
+    <!-- GEOMETRİK ARKA PLAN -->
+    <div class="background-pattern"></div>
+    
+    <!-- Modern Glass Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">𐃉</span>
+                    <span class="logo-text">ModernDüşünce</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home fa-sm"></i> Ana Sayfa</a></li>
+                    <li class="nav-item"><a href="yazilar.html" class="nav-link active"><i class="fas fa-pen fa-sm"></i> Tüm Yazılar</a></li>
+                    <li class="nav-item"><a href="#kurdistan" class="nav-link"><i class="fas fa-mountain fa-sm"></i> Kürdistan</a></li>
+                    <li class="nav-item"><a href="#islam" class="nav-link"><i class="fas fa-mosque fa-sm"></i> İslam</a></li>
+                    <li class="nav-item"><a href="#hakkimda" class="nav-link"><i class="fas fa-user fa-sm"></i> Hakkımda</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Tema değiştir" id="themeToggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menüyü aç" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Yazılar Ana Başlık -->
+    <section class="page-hero">
+        <div class="page-hero-container">
+            <h1 class="page-hero-title">Tüm Yazılar</h1>
+            <p class="page-hero-subtitle">Köklü düşünceler, modern yaklaşımlar. Toplam <span id="totalPosts">127</span> yazı.</p>
+        </div>
+    </section>
+
+    <!-- Filtreleme ve Arama Alanı -->
+    <section class="filters-section">
+        <div class="filters-container">
+            <!-- Arama Çubuğu -->
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Başlık veya içerikte ara..." class="search-input">
+                <button id="clearSearch" class="clear-search-btn" title="Aramayı temizle">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Kategori Filtreleri -->
+            <div class="categories-filter">
+                <div class="filter-header">
+                    <h3><i class="fas fa-filter"></i> Kategoriler</h3>
+                    <button id="clearFilters" class="clear-filters-btn">Tümünü Göster</button>
+                </div>
+                
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">Tümü</button>
+                    <button class="category-btn" data-category="tarih">Tarih</button>
+                    <button class="category-btn" data-category="dil">Dil</button>
+                    <button class="category-btn" data-category="insan">İnsan</button>
+                    <button class="category-btn" data-category="bilim">Bilim</button>
+                    <button class="category-btn" data-category="kuran">Kuran Tefsiri</button>
+                    <button class="category-btn" data-category="din">Din</button>
+                    <button class="category-btn" data-category="ekonomi">Ekonomi</button>
+                    <button class="category-btn" data-category="felsefe">Felsefe</button>
+                    <button class="category-btn" data-category="mezopotamya">Mezopotamya</button>
+                    <button class="category-btn" data-category="seyahat">Seyahat</button>
+                    <button class="category-btn" data-category="hikaye">Kısa Hikayeler</button>
+                </div>
+            </div>
+            
+            <!-- Sıralama -->
+            <div class="sorting-options">
+                <label for="sortSelect"><i class="fas fa-sort-amount-down"></i> Sırala:</label>
+                <select id="sortSelect" class="sort-select">
+                    <option value="newest">En yeni</option>
+                    <option value="oldest">En eski</option>
+                    <option value="title-asc">Başlık (A-Z)</option>
+                    <option value="title-desc">Başlık (Z-A)</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yazılar Grid -->
+    <main class="all-posts-main">
+        <div class="all-posts-container">
+            <!-- Yazılar buraya JavaScript ile eklenecek -->
+            <div class="posts-grid" id="postsGrid">
+                <!-- Örnek yazılar yüklenecek -->
+            </div>
+            
+            <!-- Yükleme Göstergesi -->
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="loading-spinner"></div>
+                <p>Daha fazla yazı yükleniyor...</p>
+            </div>
+            
+            <!-- Sonuç Bulunamadı -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search fa-3x"></i>
+                <h3>Hiç yazı bulunamadı</h3>
+                <p>Arama kriterlerinize uygun yazı bulunamadı. Lütfen farklı bir kategori seçin veya arama teriminizi değiştirin.</p>
+                <button id="resetFilters" class="cta-btn">Tüm Yazıları Göster</button>
+            </div>
+            
+            <!-- Tüm Yazılar Yüklendi -->
+            <div class="end-of-posts" id="endOfPosts" style="display: none;">
+                <i class="fas fa-flag-checkered fa-2x"></i>
+                <p>Tüm yazıları görüntülüyorsunuz.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3 class="footer-logo">
+                    <span class="logo-icon">𐃉</span> ModernDüşünce
+                </h3>
+                <p class="footer-mission">
+                    Geleneksel kökler ile modern dalları birleştiren bir düşünce platformu. İslami derinlik, Kürdistanî sıcaklık ve evrensel akıl yürütme.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-col">
+                    <h4>Keşfet</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="yazilar.html">Tüm Yazılar</a></li>
+                        <li><a href="#kategoriler">Kategoriler</a></li>
+                        <li><a href="#arsiv">Arşiv</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-col">
+                    <h4>Bağlantılar</h4>
+                    <ul>
+                        <li><a href="#hakkimda">Hakkımda</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                        <li><a href="#gizlilik">Gizlilik Politikası</a></li>
+                        <li><a href="#sss">S.S.S.</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-col">
+                    <h4>Sosyal</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a>
+                    </div>
+                    <p class="newsletter-text">Yeni yazılardan haberdar olun.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="E-posta adresiniz" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="copyright">&copy; 2024 Modern Düşünce. Tüm hakları saklıdır.</p>
+                <p class="footer-quote-small">"Hikmet, mü'minin yitik malıdır. Onu nerede bulursa alır."</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // ===== TEMA DEĞİŞTİRME (Ana sayfayla aynı) =====
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeIcon.className = 'fas fa-sun';
+        themeIcon.style.color = '#C69F6D';
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.className = 'fas fa-moon';
+                themeIcon.style.color = '#1F2E3E';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+                themeIcon.style.color = '#C69F6D';
+            }
+        });
+
+        // ===== MOBİL MENÜ =====
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('mobile-active');
+            mobileMenuBtn.classList.toggle('active');
+            
+            if (mobileMenuBtn.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // ===== YAZILAR VERİSİ (Örnek - gerçekte API'den gelecek) =====
+        const samplePosts = [
+            {
+                id: 1,
+                title: "Modern Çağda Adalet: Nisa 135'in Dijital Yorumu",
+                excerpt: "Yapay zeka ve blockchain çağında İslami adalet kavramını nasıl yeniden düşünmeliyiz? Geleneksel tefsirlerin ötesine geçen bir yaklaşım...",
+                categories: ["kuran", "din", "felsefe"],
+                date: "2024-03-15",
+                readTime: "8",
+                link: "blog/tefsir-modern-adalet.html"
+            },
+            {
+                id: 2,
+                title: "Blockchain ve Zekat: Dijital Çağda Sadaka Kültürü",
+                excerpt: "Kripto para ve blockchain teknolojisi İslami finans ve zekat sistemini nasıl dönüştürebilir? Merkeziyetsiz hayırseverliğin geleceği.",
+                categories: ["din", "ekonomi", "bilim"],
+                date: "2024-03-10",
+                readTime: "6",
+                link: "blog/blockchain-zekat.html"
+            },
+            {
+                id: 3,
+                title: "Bir Şehrin Hafızası: Diyarbekir'in Taş Dili",
+                excerpt: "Kadim surların, medreselerin ve hanların anlattığı hikayeler. Kürt coğrafyasının kültürel kodlarına dair bir arkeoloji denemesi.",
+                categories: ["tarih", "mezopotamya", "seyahat"],
+                date: "2024-03-05",
+                readTime: "10",
+                link: "blog/diyarbekir-hafiza.html"
+            },
+            {
+                id: 4,
+                title: "Kürtçenin Dilbilimsel Yolculuğu",
+                excerpt: "Hint-Avrupa dil ailesinin kadim bir üyesi olan Kürtçenin tarihsel gelişimi ve modernleşme sürecine dilbilimsel bir bakış.",
+                categories: ["dil", "tarih", "mezopotamya"],
+                date: "2024-02-28",
+                readTime: "12",
+                link: "blog/kurtce-dilbilim.html"
+            },
+            {
+                id: 5,
+                title: "İnsan Doğası Üzerine: Modern Psikoloji ve Tasavvuf",
+                excerpt: "Modern psikolojinin insan doğasına dair keşifleri ile tasavvuf öğretileri arasındaki şaşırtıcı paralellikler.",
+                categories: ["insan", "din", "felsefe"],
+                date: "2024-02-20",
+                readTime: "15",
+                link: "blog/insan-dogasi-tasavvuf.html"
+            },
+            {
+                id: 6,
+                title: "Kuantum Fiziği ve Determinizm: İrade Özgürlüğüne Yeni Bakış",
+                excerpt: "Kuantum mekaniğinin belirsizlik ilkesi, İslam düşüncesindeki irade özgürlüğü tartışmalarına nasıl bir pencere açıyor?",
+                categories: ["bilim", "felsefe", "din"],
+                date: "2024-02-15",
+                readTime: "14",
+                link: "blog/kuantum-irade.html"
+            },
+            {
+                id: 7,
+                title: "Mezopotamya'da Tarım Devrimi ve Toplumsal Dönüşüm",
+                excerpt: "İnsanlık tarihinin en önemli dönüm noktalarından biri: Bereketli Hilal'de tarımın keşfi ve toplum yapısına etkileri.",
+                categories: ["tarih", "mezopotamya", "ekonomi"],
+                date: "2024-02-10",
+                readTime: "11",
+                link: "blog/mezopotamya-tarim.html"
+            },
+            {
+                id: 8,
+                title: "Dijital Göçebelik: Yeni Nesil Seyahat Kültürü",
+                excerpt: "İnternet çağında seyahat etmek ve çalışmak. Dijital göçebelerin ortaya çıkardığı yeni yaşam tarzları ve kültürel etkileşimler.",
+                categories: ["seyahat", "insan", "ekonomi"],
+                date: "2024-02-05",
+                readTime: "9",
+                link: "blog/dijital-gocebelik.html"
+            },
+            {
+                id: 9,
+                title: "Zamanın Ruhu: Bir Kısa Hikaye",
+                excerpt: "Eski bir saat tamircisinin dükkanında geçen ve zamanın göreceliğini sorgulatan beklenmedik bir karşılaşmanın hikayesi.",
+                categories: ["hikaye", "felsefe"],
+                date: "2024-01-30",
+                readTime: "5",
+                link: "blog/zamanin-ruhu.html"
+            },
+            {
+                id: 10,
+                title: "İslam Ekonomisinde Faizsiz Bankacılık Modelleri",
+                excerpt: "Katılım bankacılığından kripto para tabanlı İslami fintech çözümlerine: Faizsiz finansın dünü, bugünü ve yarını.",
+                categories: ["ekonomi", "din", "bilim"],
+                date: "2024-01-25",
+                readTime: "13",
+                link: "blog/faizsiz-bankacilik.html"
+            }
+        ];
+
+        // Daha fazla örnek yazı oluştur (toplam 127 yazı simülasyonu için)
+        const allPosts = [...samplePosts];
+        for (let i = 11; i <= 127; i++) {
+            const categoriesPool = ["tarih", "dil", "insan", "bilim", "kuran", "din", "ekonomi", "felsefe", "mezopotamya", "seyahat", "hikaye"];
+            const randomCategories = [];
+            const numCategories = Math.floor(Math.random() * 3) + 1; // 1-3 kategori
+            for (let j = 0; j < numCategories; j++) {
+                const randomCat = categoriesPool[Math.floor(Math.random() * categoriesPool.length)];
+                if (!randomCategories.includes(randomCat)) {
+                    randomCategories.push(randomCat);
+                }
+            }
+            
+            const month = Math.floor(Math.random() * 12) + 1;
+            const day = Math.floor(Math.random() * 28) + 1;
+            const dateStr = `2024-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+            
+            allPosts.push({
+                id: i,
+                title: `Örnek Yazı Başlığı ${i}: ${["Modern Düşünce", "Geçmiş ve Gelecek", "Analiz ve Yorum", "Kültürel İnceleme"][Math.floor(Math.random() * 4)]}`,
+                excerpt: `Bu yazı ${randomCategories.join(", ")} kategorilerinde yer alan örnek bir içeriktir. Modern düşünce ve geleneksel değerlerin kesişim noktasını inceliyor.`,
+                categories: randomCategories,
+                date: dateStr,
+                readTime: (Math.floor(Math.random() * 10) + 5).toString(),
+                link: `blog/ornek-yazi-${i}.html`
+            });
+        }
+
+        // ===== DEĞİŞKENLER =====
+        let currentPage = 1;
+        const postsPerPage = 20;
+        let currentCategory = 'all';
+        let currentSearch = '';
+        let currentSort = 'newest';
+        let isLoading = false;
+        let allPostsLoaded = false;
+
+        // ===== DOM ELEMENTLERİ =====
+        const postsGrid = document.getElementById('postsGrid');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const noResults = document.getElementById('noResults');
+        const endOfPosts = document.getElementById('endOfPosts');
+        const searchInput = document.getElementById('searchInput');
+        const clearSearchBtn = document.getElementById('clearSearch');
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const clearFiltersBtn = document.getElementById('clearFilters');
+        const sortSelect = document.getElementById('sortSelect');
+        const resetFiltersBtn = document.getElementById('resetFilters');
+        const totalPostsSpan = document.getElementById('totalPosts');
+
+        // ===== YARDIMCI FONKSİYONLAR =====
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('tr-TR', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+        }
+
+        function getCategoryName(categoryKey) {
+            const categoryMap = {
+                'tarih': 'Tarih',
+                'dil': 'Dil',
+                'insan': 'İnsan',
+                'bilim': 'Bilim',
+                'kuran': 'Kuran Tefsiri',
+                'din': 'Din',
+                'ekonomi': 'Ekonomi',
+                'felsefe': 'Felsefe',
+                'mezopotamya': 'Mezopotamya',
+                'seyahat': 'Seyahat',
+                'hikaye': 'Kısa Hikayeler'
+            };
+            return categoryMap[categoryKey] || categoryKey;
+        }
+
+        function sortPosts(posts, sortType) {
+            const sorted = [...posts];
+            switch(sortType) {
+                case 'newest':
+                    return sorted.sort((a, b) => new Date(b.date) - new Date(a.date));
+                case 'oldest':
+                    return sorted.sort((a, b) => new Date(a.date) - new Date(b.date));
+                case 'title-asc':
+                    return sorted.sort((a, b) => a.title.localeCompare(b.title, 'tr'));
+                case 'title-desc':
+                    return sorted.sort((a, b) => b.title.localeCompare(a.title, 'tr'));
+                default:
+                    return sorted;
+            }
+        }
+
+        function filterPosts() {
+            let filtered = allPosts;
+            
+            // Kategori filtreleme
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(post => 
+                    post.categories.includes(currentCategory)
+                );
+            }
+            
+            // Arama filtreleme
+            if (currentSearch.trim() !== '') {
+                const searchTerm = currentSearch.toLowerCase();
+                filtered = filtered.filter(post => 
+                    post.title.toLowerCase().includes(searchTerm) || 
+                    post.excerpt.toLowerCase().includes(searchTerm) ||
+                    post.categories.some(cat => getCategoryName(cat).toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            // Sıralama
+            filtered = sortPosts(filtered, currentSort);
+            
+            return filtered;
+        }
+
+        function renderPosts() {
+            const filteredPosts = filterPosts();
+            const startIndex = 0;
+            const endIndex = currentPage * postsPerPage;
+            const postsToShow = filteredPosts.slice(startIndex, endIndex);
+            
+            // Toplam yazı sayısını güncelle
+            totalPostsSpan.textContent = filteredPosts.length;
+            
+            // Eğer filtreleme sonucu yazı yoksa
+            if (filteredPosts.length === 0) {
+                postsGrid.innerHTML = '';
+                noResults.style.display = 'block';
+                loadingIndicator.style.display = 'none';
+                endOfPosts.style.display = 'none';
+                return;
+            } else {
+                noResults.style.display = 'none';
+            }
+            
+            // Yazıları render et
+            if (currentPage === 1) {
+                postsGrid.innerHTML = '';
+            }
+            
+            postsToShow.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'all-post-card';
+                postElement.innerHTML = `
+                    <div class="all-post-meta">
+                        ${post.categories.map(cat => 
+                            `<span class="all-post-category" style="background-color: rgba(46, 79, 47, 0.15); color: #4B8763;">${getCategoryName(cat)}</span>`
+                        ).join('')}
+                        <time class="all-post-date">${formatDate(post.date)}</time>
+                    </div>
+                    <h3 class="all-post-title">
+                        <a href="${post.link}">${post.title}</a>
+                    </h3>
+                    <p class="all-post-excerpt">${post.excerpt}</p>
+                    <div class="all-post-footer">
+                        <a href="${post.link}" class="all-post-read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                        <span class="all-post-read-time"><i class="far fa-clock"></i> ${post.readTime} dk</span>
+                    </div>
+                `;
+                postsGrid.appendChild(postElement);
+            });
+            
+            // Tüm yazılar yüklendi mi kontrol et
+            if (postsToShow.length >= filteredPosts.length) {
+                allPostsLoaded = true;
+                endOfPosts.style.display = 'block';
+                loadingIndicator.style.display = 'none';
+            } else {
+                allPostsLoaded = false;
+                endOfPosts.style.display = 'none';
+                loadingIndicator.style.display = 'flex';
+            }
+        }
+
+        function loadMorePosts() {
+            if (isLoading || allPostsLoaded) return;
+            
+            isLoading = true;
+            loadingIndicator.style.opacity = '1';
+            
+            // Simüle edilmiş yükleme gecikmesi
+            setTimeout(() => {
+                currentPage++;
+                renderPosts();
+                isLoading = false;
+                loadingIndicator.style.opacity = '0.7';
+            }, 800);
+        }
+
+        function resetFilters() {
+            currentPage = 1;
+            currentCategory = 'all';
+            currentSearch = '';
+            currentSort = 'newest';
+            
+            searchInput.value = '';
+            sortSelect.value = 'newest';
+            
+            // Tüm kategori butonlarını güncelle
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === 'all') {
+                    btn.classList.add('active');
+                }
+            });
+            
+            renderPosts();
+        }
+
+        // ===== OLAYLARI DİNLEME =====
+        // Kategori butonları
+        categoryButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                currentPage = 1;
+                currentCategory = btn.dataset.category;
+                renderPosts();
+            });
+        });
+
+        // Arama
+        searchInput.addEventListener('input', (e) => {
+            currentPage = 1;
+            currentSearch = e.target.value;
+            renderPosts();
+            
+            // Temizle butonunu göster/gizle
+            if (currentSearch.trim() !== '') {
+                clearSearchBtn.style.display = 'flex';
+            } else {
+                clearSearchBtn.style.display = 'none';
+            }
+        });
+
+        // Arama temizleme
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            currentSearch = '';
+            clearSearchBtn.style.display = 'none';
+            currentPage = 1;
+            renderPosts();
+        });
+
+        // Tüm filtreleri temizle
+        clearFiltersBtn.addEventListener('click', resetFilters);
+        resetFiltersBtn.addEventListener('click', resetFilters);
+
+        // Sıralama
+        sortSelect.addEventListener('change', (e) => {
+            currentPage = 1;
+            currentSort = e.target.value;
+            renderPosts();
+        });
+
+        // Sonsuz kaydırma
+        window.addEventListener('scroll', () => {
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+            
+            if (scrollTop + clientHeight >= scrollHeight - 100) {
+                loadMorePosts();
+            }
+        });
+
+        // ===== SAYFA YÜKLENDİĞİNDE =====
+        document.addEventListener('DOMContentLoaded', () => {
+            totalPostsSpan.textContent = allPosts.length;
+            renderPosts();
+        });
+
+        // ===== YUMUŞAK SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Mobil menüyü kapat
+                    if (mainNav.classList.contains('mobile-active')) {
+                        mainNav.classList.remove('mobile-active');
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
