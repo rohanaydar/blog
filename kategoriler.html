@@ -1,1 +1,198 @@
+---
+layout: default
+title: Kategoriler
+description: Tüm yazı kategorileri ve ilgili yazılar.
+---
 
+<section class="page-hero">
+    <div class="page-hero-container">
+        <h1 class="page-hero-title">Kategoriler</h1>
+        <p class="page-hero-subtitle">Yazılarınızı konularına göre keşfedin. Toplam {{ site.categories.size }} kategori.</p>
+    </div>
+</section>
+
+<main class="categories-main">
+    <div class="categories-container">
+        {% assign sorted_categories = site.categories | sort %}
+        
+        {% for category in sorted_categories %}
+        <div class="category-card">
+            <div class="category-header">
+                <h2 class="category-title">
+                    <i class="fas fa-folder"></i> {{ category[0] }}
+                </h2>
+                <span class="category-count">{{ category[1].size }} yazı</span>
+            </div>
+            
+            <div class="category-posts">
+                {% for post in category[1] limit:5 %}
+                <article class="category-post-item">
+                    <h3 class="category-post-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h3>
+                    <div class="category-post-meta">
+                        <time class="category-post-date">{{ post.date | date: "%d %B %Y" }}</time>
+                        <span class="category-post-readtime">{{ post.readTime }} dk</span>
+                    </div>
+                </article>
+                {% endfor %}
+                
+                {% if category[1].size > 5 %}
+                <div class="view-more-container">
+                    <a href="#" class="view-more-btn" data-category="{{ category[0] }}">
+                        {{ category[1].size | minus: 5 }} yazı daha gör <i class="fas fa-arrow-down"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+<style>
+.categories-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.8rem;
+    transition: var(--transition);
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--color-accent);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.category-count {
+    background: rgba(46, 79, 47, 0.15);
+    color: var(--color-accent2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.category-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.category-post-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.category-post-item:last-child {
+    border-bottom: none;
+}
+
+.category-post-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.category-post-title a:hover {
+    color: var(--color-accent);
+}
+
+.category-post-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.view-more-container {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.view-more-btn {
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.view-more-btn:hover {
+    gap: 0.8rem;
+    color: var(--color-accent2);
+}
+
+@media (max-width: 768px) {
+    .categories-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-main {
+        padding: 0 1.5rem 3rem;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Kategori genişletme/küçültme
+    document.querySelectorAll('.view-more-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const category = this.dataset.category;
+            const categoryCard = this.closest('.category-card');
+            const hiddenPosts = categoryCard.querySelectorAll('.category-post-item:nth-child(n+6)');
+            
+            if (this.classList.contains('expanded')) {
+                // Küçült
+                hiddenPosts.forEach(post => {
+                    post.style.display = 'none';
+                });
+                this.innerHTML = `${hiddenPosts.length} yazı daha gör <i class="fas fa-arrow-down"></i>`;
+                this.classList.remove('expanded');
+            } else {
+                // Genişlet
+                hiddenPosts.forEach(post => {
+                    post.style.display = 'block';
+                });
+                this.innerHTML = `Daha az göster <i class="fas fa-arrow-up"></i>`;
+                this.classList.add('expanded');
+            }
+        });
+    });
+});
+</script>
