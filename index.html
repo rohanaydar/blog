@@ -3,198 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Düşünce | Geleceğe Dair</title>
+    <title>Ömer Seyfettin AYDAR | Kökler ve Gelecek</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Modern Fontlar -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Scheherazade:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="#">
 </head>
 <body>
-    <!-- Geometrik Arka Plan -->
-    <div class="background-pattern"></div>
-    <div class="motif motif-1"></div>
-    <div class="motif motif-2"></div>
-
-    <!-- Modern Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Modern Glass Header -->
+    <header class="site-header">
+        <div class="header-container">
             <div class="logo">
-                ModernDüşünce
+                <a href="index.html">
+                    <span class="logo-icon">𐃉</span>
+                    <span class="logo-text">Ömer Seyfettin AYDAR</span>
+                </a>
             </div>
             
-            <ul class="nav-links">
-                <li><a href="#"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-                <li><a href="#"><i class="fas fa-book-open"></i> Yazılar</a></li>
-                <li><a href="#"><i class="fas fa-mountain"></i> Kürdistan</a></li>
-                <li><a href="#"><i class="fas fa-mosque"></i> İslam</a></li>
-                <li><a href="#"><i class="fas fa-user"></i> Hakkımda</a></li>
-            </ul>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link active"><i class="fas fa-home fa-sm"></i> Ana Sayfa</a></li>
+                    <li class="nav-item"><a href="#yazilar" class="nav-link"><i class="fas fa-pen fa-sm"></i> Tüm Yazılar</a></li>
+                    <li class="nav-item"><a href="#tarih" class="nav-link"><i class="fas fa-mountain fa-sm"></i> Tarih</a></li>
+                    <li class="nav-item"><a href="#islam" class="nav-link"><i class="fas fa-mosque fa-sm"></i> İslam</a></li>
+                    <li class="nav-item"><a href="#hakkimda" class="nav-link"><i class="fas fa-user fa-sm"></i> Hakkımda</a></li>
+                </ul>
+            </nav>
             
-            <div class="theme-toggle">
-                <i class="fas fa-moon"></i>
+            <div class="header-actions">
+                <button class="theme-toggle" aria-label="Tema değiştir" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menüyü aç" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
+    <!-- Hero / Giriş Bölümü -->
     <section class="hero">
-        <h1 class="hero-title">
-            Gelecek Burada Başlıyor
-            <span style="display: block; font-size: 2rem; margin-top: 1rem; color: var(--accent);">
-                Geleneksel Kökler, Modern Dallar
-            </span>
-        </h1>
-        <p class="hero-subtitle">
-            İslam'ın evrensel değerleri, Kürdistan'ın kadim bilgeliği ve modern dünyanın 
-            teknolojik imkanlarıyla şekillenen bir düşünce platformu
-        </p>
-        
-        <div class="hero-cta">
-            <a href="#" class="cta-button">Yazıları Keşfet</a>
-            <a href="#" class="cta-button-outline">Hakkımda</a>
+        <div class="hero-container">
+            <h1 class="hero-title">Köklerden Geleceğe</h1>
+            <p class="hero-subtitle">Geleneğin bilgeliği, modern dünyanın dili ile buluşuyor. İslami derinlik, Kürdistanî sıcaklık ve evrensel akıl yürütme.</p>
+            <div class="hero-cta">
+                <a href="#yazilar" class="cta-btn">Yazıları Keşfet <i class="fas fa-arrow-right"></i></a>
+                <a href="#abone" class="cta-btn secondary">Güncel Kal <i class="fas fa-envelope"></i></a>
+            </div>
         </div>
     </section>
 
-    <!-- Ana İçerik -->
-    <div class="main-container">
-        <main>
-            <div class="section-header">
-                <h2><i class="fas fa-stars"></i> Öne Çıkan Yazılar</h2>
-                <p>Güncel analizler ve derin düşünceler</p>
-            </div>
-
-            <div class="blog-grid">
-                <!-- Blog Kartı 1 -->
-                <article class="blog-card">
-                    <span class="card-category">Kuran Tefsiri</span>
-                    <h3 class="card-title">Modern Çağda Adalet: Nisa 135'in Yeni Yorumu</h3>
-                    <p class="card-excerpt">
-        Yapay zeka çağında İslami adalet kavramını nasıl yeniden düşünmeliyiz? Geleneksel tefsirlerin ötesine geçen bir yaklaşım...
-                    </p>
-                    <div class="card-meta">
-                        <span><i class="far fa-calendar"></i> 2 Gün Önce</span>
-                        <span><i class="far fa-clock"></i> 8 dk okuma</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="blog/tefsir-modern-adalet.html" class="read-more">
-                            Devamını Oku <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Blog Kartı 2 -->
-                <article class="blog-card">
-                    <span class="card-category">Teknoloji & İslam</span>
-                    <h3 class="card-title">Blockchain ve Zekat: Dijital Çağda Sadaka Kültürü</h3>
-                    <p class="card-excerpt">
-                        Kripto para ve blockchain teknolojisi İslami finans ve zekat sistemini nasıl dönüştürebilir?
-                    </p>
-                    <div class="card-meta">
-                        <span><i class="far fa-calendar"></i> 1 Hafta Önce</span>
-                        <span><i class="fas fa-brain"></i> İleri Seviye</span>
-                    </div>
-                    <div class="card-footer">
-                        <a href="blog/blockchain-zekat.html" class="read-more">
-                            Devamını Oku <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Diğer kartlar... -->
-            </div>
-        </main>
-
-        <!-- Modern Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-card">
-                <h3><i class="fas fa-filter"></i> Kategoriler</h3>
-                <div class="category-cloud">
-                    <span class="category-tag">Kuran Tefsiri</span>
-                    <span class="category-tag">Modern İslam</span>
-                    <span class="category-tag">Kürdistan Tarihi</span>
-                    <span class="category-tag">Teknoloji & Din</span>
-                    <span class="category-tag">Sosyoloji</span>
-                    <span class="category-tag">Kişisel Gelişim</span>
-                    <span class="category-tag">Bilim-Felsefe</span>
+    <!-- Ana İçerik Alanı -->
+    <main class="main-content">
+        <div class="content-container">
+            <!-- Blog Yazıları Listesi -->
+            <section class="posts-section" id="yazilar">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-feather-alt"></i> Son Yazılar</h2>
+                    <p class="section-subtitle">En güncel düşünce ve analizler.</p>
                 </div>
-            </div>
-
-            <div class="sidebar-card">
-                <h3><i class="fas fa-quote-right"></i> Günün Sözü</h3>
-                <blockquote class="wisdom-quote">
-                    "İlim, Çin'de de olsa alınız; çünkü ilim mü'minin kayıp malıdır."
-                    <footer>- Hz. Muhammed (s.a.v)</footer>
-                </blockquote>
-            </div>
-
-            <div class="sidebar-card">
-                <h3><i class="fas fa-trending-up"></i> Popüler Yazılar</h3>
-                <ul class="popular-posts">
-                    <li><a href="#">Yapay Zeka ve Ahlak Sorumluluğu</a></li>
-                    <li><a href="#">Kürt Dili: Geçmiş ve Gelecek</a></li>
-                    <li><a href="#">Dijital Çağda İbadet</a></li>
-                </ul>
-            </div>
-        </aside>
-    </div>
+                
+                <div class="posts-list">
+                    <!-- Yazı 1 -->
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category" style="background-color: rgba(125, 47, 47, 0.15); color: #C69F6D;">Kuran Tefsiri</span>
+                            <time class="post-date" datetime="2024-03-15">15 Mart 2024</time>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog/tefsir-modern-adalet.html">Modern Çağda Adalet: Nisa 135'in Dijital Yorumu</a>
+                        </h3>
+                        <p class="post-excerpt">Yapay zeka ve blockchain çağında İslami adalet kavramını nasıl yeniden düşünmeliyiz? Geleneksel tefsirlerin ötesine geçen bir yaklaşım...</p>
+                        <div class="post-footer">
+                            <a href="blog/tefsir-modern-adalet.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            <span class="read-time"><i class="far fa-clock"></i> 8 dk</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Yazı 2 -->
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category" style="background-color: rgba(75, 135, 99, 0.15); color: #4B8763;">Teknoloji & Din</span>
+                            <time class="post-date" datetime="2024-03-10">10 Mart 2024</time>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog/blockchain-zekat.html">Blockchain ve Zekat: Dijital Çağda Sadaka Kültürü</a>
+                        </h3>
+                        <p class="post-excerpt">Kripto para ve blockchain teknolojisi İslami finans ve zekat sistemini nasıl dönüştürebilir? Merkeziyetsiz hayırseverliğin geleceği.</p>
+                        <div class="post-footer">
+                            <a href="blog/blockchain-zekat.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            <span class="read-time"><i class="far fa-clock"></i> 6 dk</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Yazı 3 -->
+                    <article class="post-item">
+                        <div class="post-meta">
+                            <span class="post-category" style="background-color: rgba(31, 46, 62, 0.15); color: #C69F6D;">Tarih & Medeniyet</span>
+                            <time class="post-date" datetime="2024-03-05">5 Mart 2024</time>
+                        </div>
+                        <h3 class="post-title">
+                            <a href="blog/diyarbekir-hafiza.html">Bir Şehrin Hafızası: Diyarbekir'in Taş Dili</a>
+                        </h3>
+                        <p class="post-excerpt">Kadim surların, medreselerin ve hanların anlattığı hikayeler. Kürt coğrafyasının kültürel kodlarına dair bir arkeoloji denemesi.</p>
+                        <div class="post-footer">
+                            <a href="blog/diyarbekir-hafiza.html" class="read-more">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            <span class="read-time"><i class="far fa-clock"></i> 10 dk</span>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="section-footer">
+                    <a href="#tum-yazilar" class="view-all-btn">Tüm Yazılar <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </section>
+            
+            <!-- Yan Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-filter"></i> Kategoriler</h3>
+                    <ul class="category-list">
+                        <li><a href="#tefsir" class="cat-link">Kuran Tefsiri <span class="cat-count">12</span></a></li>
+                        <li><a href="#tarih" class="cat-link">Tarih & Medeniyet <span class="cat-count">8</span></a></li>
+                        <li><a href="#teknoloji" class="cat-link">Teknoloji & Din <span class="cat-count">5</span></a></li>
+                        <li><a href="#sosyoloji" class="cat-link">Sosyoloji <span class="cat-count">7</span></a></li>
+                        <li><a href="#bilim" class="cat-link">Bilim-Felsefe <span class="cat-count">9</span></a></li>
+                        <li><a href="#kisisel" class="cat-link">Kişisel Deneyimler <span class="cat-count">15</span></a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-fire"></i> Popüler</h3>
+                    <ul class="popular-list">
+                        <li><a href="#" class="popular-link">Yapay Zeka ve Ahlak Sorumluluğu</a></li>
+                        <li><a href="#" class="popular-link">Kürt Dili: Geçmiş ve Gelecek</a></li>
+                        <li><a href="#" class="popular-link">Dijital Çağda İbadet</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-quote-right"></i> Günün Sözü</h3>
+                    <blockquote class="wisdom-quote">
+                        "İlim, Çin'de de olsa alınız; çünkü ilim mü'minin kayıp malıdır."
+                        <footer>- Hz. Muhammed (s.a.v)</footer>
+                    </blockquote>
+                </div>
+            </aside>
+        </div>
+    </main>
 
     <!-- Modern Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-quote">
-                "Hikmet, mü'minin yitik malıdır. Onu nerede bulursa alır."
-                <div style="margin-top: 1rem; font-size: 1rem; color: var(--text-secondary);">
-                    — Geleneksel ile modernin buluşma noktası
-                </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3 class="footer-logo">
+                    <span class="logo-icon">𐃉</span> ModernDüşünce
+                </h3>
+                <p class="footer-mission">
+                    Geleneksel kökler ile modern dalları birleştiren bir düşünce platformu. İslami derinlik, Kürdistanî sıcaklık ve evrensel akıl yürütme.
+                </p>
             </div>
             
             <div class="footer-links">
-                <h4>Bağlantılar</h4>
-                <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            </div>
-            
-            <div class="footer-newsletter">
-                <h4>Güncellemeleri Kaçırma</h4>
-                <p>Yeni yazılardan haberdar ol.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="E-posta adresiniz">
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </form>
+                <div class="link-col">
+                    <h4>Keşfet</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="#yazilar">Tüm Yazılar</a></li>
+                        <li><a href="#kategoriler">Kategoriler</a></li>
+                        <li><a href="#arsiv">Arşiv</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-col">
+                    <h4>Bağlantılar</h4>
+                    <ul>
+                        <li><a href="#hakkimda">Hakkımda</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                        <li><a href="#gizlilik">Gizlilik Politikası</a></li>
+                        <li><a href="#sss">S.S.S.</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-col">
+                    <h4>Sosyal</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="RSS"><i class="fas fa-rss"></i></a>
+                    </div>
+                    <p class="newsletter-text">Yeni yazılardan haberdar olun.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="E-posta adresiniz" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>© 2024 Modern Düşünce | Tüm hakları saklıdır. | <a href="#">Gizlilik Politikası</a></p>
-            <p class="footer-motto">
-                <i class="fas fa-heart" style="color: var(--accent2);"></i>
-                İlim, İman, İrfan yolunda...
-            </p>
+            <div class="footer-bottom-container">
+                <p class="copyright">Ömer Seyfettin AYDAR &copy; 2026 Tüm hakları saklıdır.</p>
+                <p class="footer-quote">"Hikmet, mü'minin yitik malıdır. Onu nerede bulursa alır."</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Basit JavaScript -->
+    <!-- JavaScript -->
     <script>
-        // Tema değiştirme
-        document.querySelector('.theme-toggle').addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
-            const icon = this.querySelector('i');
-            if (document.body.classList.contains('light-mode')) {
-                icon.className = 'fas fa-sun';
+        // Tema Değiştirme
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            
+            if (document.body.classList.contains('light-theme')) {
+                themeIcon.className = 'fas fa-sun';
+                themeIcon.style.color = '#C69F6D';
             } else {
-                icon.className = 'fas fa-moon';
+                themeIcon.className = 'fas fa-moon';
+                themeIcon.style.color = '';
             }
         });
 
-        // Kart hover efekti
-        document.querySelectorAll('.blog-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
+        // Mobil Menü
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.querySelector('.main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('mobile-active');
+            mobileMenuBtn.classList.toggle('active');
             
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+            if (mobileMenuBtn.classList.contains('active')) {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Yumuşak Scroll (Sayfa içi linkler için)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Mobil menüyü kapat
+                    mainNav.classList.remove('mobile-active');
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
             });
         });
     </script>
