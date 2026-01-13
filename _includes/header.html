@@ -1,0 +1,31 @@
+<header class="site-header">
+    <div class="header-container">
+        <div class="logo">
+            <a href="{{ '/' | relative_url }}">
+                <span class="logo-icon">𐃉</span>
+                <span class="logo-text">{{ site.title }}</span>
+            </a>
+        </div>
+        
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}"><i class="fas fa-home fa-sm"></i> Ana Sayfa</a></li>
+                <li class="nav-item"><a href="{{ '/yazilar.html' | relative_url }}" class="nav-link {% if page.url contains '/yazilar' %}active{% endif %}"><i class="fas fa-pen fa-sm"></i> Tüm Yazılar</a></li>
+                <li class="nav-item"><a href="{{ '/kategoriler.html' | relative_url }}" class="nav-link {% if page.url contains '/kategoriler' %}active{% endif %}"><i class="fas fa-filter fa-sm"></i> Kategoriler</a></li>
+                <li class="nav-item"><a href="#islam" class="nav-link"><i class="fas fa-mosque fa-sm"></i> İslam</a></li>
+                <li class="nav-item"><a href="#hakkimda" class="nav-link"><i class="fas fa-user fa-sm"></i> Hakkımda</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-actions">
+            <button class="theme-toggle" aria-label="Tema değiştir" id="themeToggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="mobile-menu-btn" aria-label="Menüyü aç" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="background-pattern"></div>
