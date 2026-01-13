@@ -5,7 +5,7 @@ url: "https://rohanaydar.github.io"
 
 # Jekyll ayarları
 markdown: kramdown
-permalink: /blog/:title
+permalink: /blog/:title/
 collections:
   posts:
     output: true
